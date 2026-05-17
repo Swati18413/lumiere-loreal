@@ -1,0 +1,1939 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumière by L'Oréal Paris | Your Beauty. Understood.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ivory: #FBF5EF;
+    --champagne: #F2E8DC;
+    --deep-warm: #2C1810;
+    --burgundy: #8B3A52;
+    --burgundy-dark: #6B2A3E;
+    --copper: #C4956A;
+    --blush: #E8C4B8;
+    --text-dark: #1C0F0A;
+    --text-mid: #6B4C3B;
+    --text-muted: #9E7E6E;
+    --card-bg: #FFFFFF;
+    --sage: #4A6741;
+    --sage-light: #F5F8F2;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    background: var(--ivory);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(251,245,239,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196,149,106,0.25);
+    display: flex; align-items: center;
+    justify-content: space-between;
+    padding: 0 60px; height: 64px;
+  }
+  .nav-logo {
+    font-family: 'Jost', sans-serif;
+    font-weight: 500; font-size: 13px;
+    letter-spacing: 0.25em; color: var(--text-dark);
+    text-transform: uppercase; text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 40px; }
+  .nav-links a {
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 400;
+    letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--text-mid); text-decoration: none;
+    padding-bottom: 4px; border-bottom: 2px solid transparent;
+    transition: all 0.3s ease; cursor: pointer;
+  }
+  .nav-links a:hover, .nav-links a.active {
+    color: var(--burgundy);
+    border-bottom-color: var(--copper);
+  }
+  .nav-right { display: flex; align-items: center; gap: 20px; }
+  .nav-right span {
+    font-size: 11px; letter-spacing: 0.15em;
+    color: var(--text-muted); cursor: pointer;
+  }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    background: var(--burgundy); color: #FFFAF6;
+    border: none; padding: 14px 32px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.3s ease; display: inline-block;
+    text-decoration: none;
+  }
+  .btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent; color: var(--burgundy);
+    border: 1.5px solid var(--burgundy);
+    padding: 13px 32px;
+    font-family: 'Jost', sans-serif;
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    cursor: pointer; border-radius: 2px;
+    transition: all 0.3s ease; display: inline-block;
+    text-decoration: none;
+  }
+  .btn-outline:hover { background: var(--burgundy); color: #FFFAF6; }
+  .btn-sm {
+    padding: 9px 20px; font-size: 10px;
+  }
+
+  /* ── PAGES ── */
+  .page { display: none; }
+  .page.active { display: block; }
+
+  /* ── HOME ── */
+  .hero {
+    min-height: calc(100vh - 64px);
+    background: linear-gradient(135deg, #FBF5EF 0%, #F2E8DC 50%, #EDD9C8 100%);
+    display: grid; grid-template-columns: 1fr 1fr;
+    align-items: center; padding: 80px 60px;
+    gap: 60px; position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; opacity: 0.5;
+  }
+  .hero-label {
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--copper); text-transform: uppercase;
+    font-weight: 500; margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 76px; font-weight: 400;
+    line-height: 1.0; color: var(--text-dark);
+    letter-spacing: -0.02em; margin-bottom: 4px;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--burgundy);
+    display: block;
+  }
+  .hero-lumiere {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 300;
+    letter-spacing: 0.45em; color: var(--copper);
+    text-transform: uppercase; margin: 16px 0 4px;
+  }
+  .hero-by {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px; font-weight: 300;
+    letter-spacing: 0.2em; color: var(--text-muted);
+    margin-bottom: 36px;
+  }
+  .hero-desc {
+    font-size: 16px; line-height: 1.85;
+    color: var(--text-mid); max-width: 480px;
+    margin-bottom: 40px;
+  }
+  .hero-desc strong {
+    font-weight: 500; color: var(--text-dark);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+  }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; }
+
+  /* Staggered product cards */
+  .hero-products {
+    position: relative; height: 500px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .product-float {
+    position: absolute;
+    background: #FFFFFF;
+    border: 1px solid rgba(196,149,106,0.2);
+    padding: 16px; width: 170px;
+    box-shadow: 0 8px 32px rgba(28,15,10,0.10);
+    border-radius: 0;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+  .product-float:nth-child(1) {
+    top: 20px; left: 60px;
+    transform: rotate(-4deg);
+    animation-delay: 0s;
+  }
+  .product-float:nth-child(2) {
+    top: 120px; left: 160px;
+    transform: rotate(2deg);
+    animation-delay: -2s;
+  }
+  .product-float:nth-child(3) {
+    top: 260px; left: 80px;
+    transform: rotate(-2deg);
+    animation-delay: -4s;
+  }
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0) rotate(var(--r, -4deg)); }
+    50% { transform: translateY(-8px) rotate(var(--r, -4deg)); }
+  }
+  .product-float img {
+    width: 100%; height: 160px;
+    object-fit: contain; background: #FFFAF6;
+    display: block;
+  }
+  .product-float-name {
+    font-size: 9px; letter-spacing: 0.15em;
+    color: var(--text-muted); text-transform: uppercase;
+    margin-top: 10px; font-weight: 400;
+    font-family: 'Jost', sans-serif;
+  }
+
+  /* ── SECTION STYLES ── */
+  section { padding: 96px 60px; }
+  .section-label {
+    font-size: 10px; letter-spacing: 0.3em;
+    color: var(--copper); text-transform: uppercase;
+    font-weight: 500; margin-bottom: 12px;
+    text-align: center;
+  }
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 400;
+    color: var(--text-dark); text-align: center;
+    margin-bottom: 8px; letter-spacing: -0.01em;
+  }
+  .section-sub {
+    font-size: 15px; color: var(--text-muted);
+    text-align: center; margin-bottom: 60px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px;
+  }
+
+  /* ── 3 CATEGORY CARDS ── */
+  .category-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 32px; max-width: 1200px; margin: 0 auto;
+  }
+  .cat-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    border-radius: 0;
+    border-left: 3px solid var(--burgundy);
+    box-shadow: 0 4px 24px rgba(139,58,82,0.07);
+    padding: 40px 32px 36px;
+    transition: all 0.4s ease; cursor: pointer;
+  }
+  .cat-card.haircare { border-left-color: var(--sage); }
+  .cat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(139,58,82,0.14);
+  }
+  .cat-images {
+    display: flex; gap: 10px; margin-bottom: 28px;
+  }
+  .cat-img-box {
+    width: 72px; height: 72px;
+    background: #FFFAF6;
+    border: 1px solid rgba(196,149,106,0.18);
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .cat-img-box img {
+    width: 100%; height: 100%;
+    object-fit: contain; padding: 6px;
+  }
+  .cat-label {
+    font-size: 10px; letter-spacing: 0.28em;
+    color: var(--copper); text-transform: uppercase;
+    font-weight: 500; margin-bottom: 12px;
+  }
+  .cat-card.haircare .cat-label { color: var(--sage); }
+  .cat-card.haircare .cat-cta { color: var(--sage); border-color: var(--sage); }
+  .cat-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 12px;
+    line-height: 1.2;
+  }
+  .cat-body {
+    font-size: 14px; line-height: 1.75;
+    color: var(--text-mid); margin-bottom: 28px;
+  }
+  .cat-cta {
+    font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--burgundy);
+    font-weight: 500; cursor: pointer;
+    border-bottom: 1px solid var(--burgundy);
+    padding-bottom: 2px; display: inline-block;
+    background: none; border-top: none;
+    border-left: none; border-right: none;
+    font-family: 'Jost', sans-serif;
+    transition: all 0.3s;
+  }
+  .cat-cta:hover { letter-spacing: 0.22em; }
+
+  /* ── TRUST STRIP ── */
+  .trust-strip {
+    background: var(--champagne);
+    padding: 60px;
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 40px; text-align: center;
+  }
+  .trust-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px; font-weight: 300;
+    color: var(--burgundy); line-height: 1;
+    margin-bottom: 8px;
+  }
+  .trust-label {
+    font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-mid);
+    font-weight: 500;
+  }
+
+  /* ── QUOTE ── */
+  .quote-section {
+    background: linear-gradient(135deg, #2C1810 0%, #3D2218 100%);
+    padding: 80px 60px; text-align: center;
+  }
+  .quote-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 300; font-style: italic;
+    color: #F2E8DC; line-height: 1.4;
+    max-width: 700px; margin: 0 auto 20px;
+  }
+  .quote-attr {
+    font-size: 11px; letter-spacing: 0.2em;
+    color: var(--copper); text-transform: uppercase;
+  }
+
+  /* ── SKINCARE PAGE ── */
+  .page-hero {
+    background: linear-gradient(135deg, #FBF5EF, #F2E8DC);
+    padding: 80px 60px; text-align: center;
+  }
+  .page-hero h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 12px;
+  }
+  .page-hero p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px;
+    color: var(--burgundy);
+  }
+
+  /* Entry cards */
+  .entry-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 32px; max-width: 800px; margin: 60px auto;
+    padding: 0 60px;
+  }
+  .entry-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.25);
+    padding: 48px 36px; text-align: center;
+    cursor: pointer; transition: all 0.4s ease;
+    border-radius: 0;
+    box-shadow: 0 2px 16px rgba(139,58,82,0.06);
+  }
+  .entry-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(139,58,82,0.12);
+    border-color: var(--copper);
+  }
+  .entry-icon {
+    font-size: 36px; margin-bottom: 20px;
+    display: block;
+  }
+  .entry-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 12px;
+  }
+  .entry-card p {
+    font-size: 14px; line-height: 1.7;
+    color: var(--text-mid); margin-bottom: 28px;
+  }
+  .entry-link {
+    font-size: 12px; color: var(--burgundy);
+    text-align: center; padding: 40px;
+    cursor: pointer; letter-spacing: 0.1em;
+  }
+  .entry-link span {
+    border-bottom: 1px solid var(--copper);
+    padding-bottom: 2px;
+  }
+
+  /* Dr Lumi */
+  .lumi-section {
+    display: flex; gap: 24px; align-items: flex-start;
+    max-width: 800px; margin: 0 auto 40px;
+    padding: 0 60px;
+  }
+  .lumi-avatar {
+    width: 80px; height: 80px; flex-shrink: 0;
+    background: linear-gradient(135deg, #F2E8DC, #E8D4C0);
+    border-radius: 50%;
+    border: 2px solid rgba(196,149,106,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 32px;
+  }
+  .lumi-content { flex: 1; }
+  .lumi-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 13px;
+    color: var(--copper); margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .lumi-bubble {
+    background: #FBF5EF;
+    border: 1px solid rgba(196,149,106,0.3);
+    border-radius: 0 12px 12px 12px;
+    padding: 20px 24px;
+    box-shadow: 0 2px 12px rgba(139,58,82,0.06);
+    font-size: 15px; line-height: 1.7;
+    color: var(--text-mid);
+  }
+
+  /* Quiz */
+  .quiz-section {
+    max-width: 800px; margin: 0 auto;
+    padding: 40px 60px;
+  }
+  .quiz-progress {
+    height: 2px; background: #F2E8DC;
+    border-radius: 0; margin-bottom: 48px;
+    overflow: hidden;
+  }
+  .quiz-progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--burgundy), var(--copper));
+    transition: width 0.5s ease;
+  }
+  .quiz-q {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 32px;
+  }
+  .quiz-options {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 12px; margin-bottom: 40px;
+  }
+  .quiz-opt {
+    background: #FFFFFF;
+    border: 1.5px solid rgba(196,149,106,0.3);
+    padding: 20px 16px; text-align: center;
+    cursor: pointer; transition: all 0.25s ease;
+    border-radius: 0; position: relative;
+    font-size: 14px; color: var(--text-mid);
+    font-family: 'Jost', sans-serif;
+  }
+  .quiz-opt:hover, .quiz-opt.selected {
+    background: #FBF0F3;
+    border-color: var(--burgundy);
+    color: var(--burgundy);
+  }
+  .quiz-opt.selected::after {
+    content: '✓';
+    position: absolute; top: 8px; right: 10px;
+    font-size: 12px; color: var(--burgundy);
+  }
+  .quiz-opt-icon { font-size: 24px; margin-bottom: 8px; display: block; }
+
+  /* Results / Routine */
+  .routine-section {
+    max-width: 900px; margin: 0 auto;
+    padding: 60px;
+  }
+  .routine-tabs {
+    display: flex; gap: 0; margin-bottom: 40px;
+    border-bottom: 1px solid rgba(196,149,106,0.2);
+  }
+  .routine-tab {
+    padding: 14px 32px;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500;
+    cursor: pointer; color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s; margin-bottom: -1px;
+    background: none; border-top: none;
+    border-left: none; border-right: none;
+    font-family: 'Jost', sans-serif;
+  }
+  .routine-tab.active {
+    color: var(--burgundy);
+    border-bottom-color: var(--burgundy);
+  }
+  .product-routine-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    border-radius: 0;
+    box-shadow: 0 2px 16px rgba(139,58,82,0.06);
+    display: grid; grid-template-columns: 180px 1fr;
+    gap: 0; margin-bottom: 24px;
+    overflow: hidden; transition: all 0.4s ease;
+  }
+  .product-routine-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(139,58,82,0.12);
+  }
+  .prod-img-wrap {
+    background: #FFFAF6;
+    display: flex; align-items: center; justify-content: center;
+    padding: 24px; border-right: 1px solid rgba(196,149,106,0.12);
+  }
+  .prod-img-wrap img {
+    width: 120px; height: 160px;
+    object-fit: contain;
+  }
+  .prod-info { padding: 28px 32px; }
+  .prod-badges {
+    display: flex; gap: 8px; margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 9px; letter-spacing: 0.18em;
+    text-transform: uppercase; padding: 5px 12px;
+    border: 1px solid var(--copper);
+    background: var(--champagne);
+    color: var(--burgundy); font-weight: 500;
+    font-family: 'Jost', sans-serif;
+  }
+  .badge.am { background: #FFF5F0; border-color: #E8C4B8; color: #8B5A4A; }
+  .badge.pm { background: #F0EAF8; border-color: #C4B0D8; color: #5A4A7A; }
+  .badge.urgent { background: var(--burgundy); color: #FFFAF6; border-color: var(--burgundy); }
+  .prod-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 4px;
+  }
+  .prod-range {
+    font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--copper);
+    font-weight: 500; margin-bottom: 14px;
+  }
+  .prod-why {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 15px;
+    color: var(--burgundy); line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .prod-how {
+    font-size: 13px; color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .prod-how strong { color: var(--text-mid); font-weight: 500; }
+
+  /* Skin profile card */
+  .skin-profile-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    max-width: 900px; margin: 0 auto 40px;
+    padding: 40px 48px;
+    box-shadow: 0 4px 24px rgba(139,58,82,0.07);
+  }
+  .skin-profile-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 28px;
+  }
+  .skin-metrics {
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  }
+  .skin-metric {
+    background: var(--champagne);
+    border: 1px solid rgba(196,149,106,0.2);
+    padding: 20px; text-align: center;
+  }
+  .metric-label {
+    font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .metric-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--burgundy);
+    font-weight: 500;
+  }
+
+  /* Timeline */
+  .timeline-card {
+    background: linear-gradient(135deg, #F2E8DC, #FBF0F3);
+    border-left: 3px solid var(--burgundy);
+    padding: 32px 40px; max-width: 900px;
+    margin: 40px auto;
+  }
+  .timeline-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 8px;
+  }
+  .timeline-card p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; margin-bottom: 20px;
+  }
+
+  /* ── HAIRCARE ── */
+  .hair-upload-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; max-width: 800px;
+    margin: 60px auto; padding: 0 60px;
+  }
+  .upload-box {
+    border: 2px dashed rgba(196,149,106,0.4);
+    background: #FFFFFF; padding: 48px 32px;
+    text-align: center; cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .upload-box:hover {
+    border-color: var(--copper);
+    background: #FFFAF6;
+  }
+  .upload-icon { font-size: 32px; margin-bottom: 16px; }
+  .upload-box h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 8px;
+  }
+  .upload-box p {
+    font-size: 13px; color: var(--text-muted); line-height: 1.6;
+  }
+
+  /* Range card */
+  .range-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    border-top: 3px solid var(--sage);
+    max-width: 900px; margin: 0 auto 32px;
+    padding: 40px 48px;
+    box-shadow: 0 4px 24px rgba(74,103,65,0.07);
+  }
+  .range-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 8px;
+  }
+  .range-desc {
+    font-size: 15px; line-height: 1.75;
+    color: var(--text-mid); margin-bottom: 36px;
+  }
+  .range-products {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+  .range-prod {
+    text-align: center; background: #FFFAF6;
+    border: 1px solid rgba(196,149,106,0.15);
+    padding: 20px;
+  }
+  .range-prod img {
+    width: 80px; height: 110px;
+    object-fit: contain; margin-bottom: 12px;
+  }
+  .range-prod-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px; color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+  .range-prod-use {
+    font-size: 11px; color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* Calendar */
+  .calendar-strip {
+    display: grid; grid-template-columns: repeat(7,1fr);
+    gap: 8px; max-width: 900px;
+    margin: 40px auto; padding: 0 60px;
+  }
+  .cal-day {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.15);
+    border-top: 2px solid #E8C4B8;
+    padding: 16px 10px; text-align: center;
+  }
+  .cal-day.wash { border-top-color: var(--burgundy); }
+  .cal-day.treatment { border-top-color: var(--sage); }
+  .cal-day-label {
+    font-size: 9px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 8px; font-weight: 500;
+  }
+  .cal-day-icon { font-size: 18px; margin-bottom: 6px; }
+  .cal-day-text {
+    font-size: 11px; color: var(--text-mid);
+    line-height: 1.4;
+  }
+
+  /* ── MAKEUP ── */
+  .makeup-paths {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 32px; max-width: 800px;
+    margin: 60px auto; padding: 0 60px;
+  }
+  .path-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.2);
+    padding: 48px 36px; text-align: center;
+    cursor: pointer; transition: all 0.4s ease;
+  }
+  .path-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(139,58,82,0.12);
+  }
+  .path-card.beginner { background: #FBF0F3; border-color: #E8C4B8; }
+  .path-card.builder { background: #F0E8FF; border-color: var(--blush); }
+  .path-icon { font-size: 40px; margin-bottom: 20px; display: block; }
+  .path-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px; color: var(--text-dark); margin-bottom: 12px;
+  }
+  .path-card p {
+    font-size: 14px; color: var(--text-mid);
+    line-height: 1.7; margin-bottom: 28px;
+  }
+
+  /* Kit builder */
+  .kit-tabs {
+    display: flex; gap: 0; margin-bottom: 40px;
+    border-bottom: 1px solid rgba(196,149,106,0.2);
+    max-width: 900px; margin: 0 auto 40px;
+    padding: 0 60px;
+  }
+  .kit-tab {
+    padding: 14px 28px;
+    font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; font-weight: 500;
+    cursor: pointer; color: var(--text-muted);
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s; margin-bottom: -1px;
+    background: none; border-top: none;
+    border-left: none; border-right: none;
+    font-family: 'Jost', sans-serif;
+  }
+  .kit-tab.active {
+    color: var(--burgundy); border-bottom-color: var(--copper);
+  }
+  .kit-prefs-bar {
+    max-width: 900px; margin: 0 auto 32px;
+    padding: 16px 60px; background: var(--champagne);
+    display: flex; align-items: center; gap: 16px;
+  }
+  .kit-prefs-label {
+    font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted);
+    font-weight: 500;
+  }
+  .pref-tag {
+    background: var(--card-bg);
+    border: 1px solid var(--copper);
+    padding: 4px 12px; font-size: 11px;
+    color: var(--burgundy); letter-spacing: 0.1em;
+  }
+  .makeup-grid {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 24px; max-width: 900px;
+    margin: 0 auto; padding: 0 60px 60px;
+  }
+  .makeup-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    overflow: hidden; transition: all 0.4s ease;
+  }
+  .makeup-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(139,58,82,0.12);
+    border-color: rgba(196,149,106,0.4);
+  }
+  .makeup-img {
+    background: #FFFAF6; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    border-bottom: 1px solid rgba(196,149,106,0.1);
+    position: relative;
+  }
+  .makeup-img img {
+    height: 150px; width: 100%;
+    object-fit: contain; padding: 12px;
+  }
+  .match-badge {
+    position: absolute; top: 12px; left: 12px;
+    background: #F2EDE8; border: 1px solid var(--copper);
+    font-size: 9px; letter-spacing: 0.15em;
+    text-transform: uppercase; color: #6B4C3B;
+    padding: 4px 10px; font-weight: 500;
+  }
+  .makeup-card-body { padding: 20px; }
+  .makeup-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: var(--text-dark);
+    margin-bottom: 6px;
+  }
+  .makeup-detail {
+    font-size: 12px; color: var(--text-muted);
+    margin-bottom: 16px; line-height: 1.5;
+  }
+  .makeup-actions { display: flex; gap: 8px; }
+  .btn-add {
+    flex: 1; background: var(--burgundy); color: #FFFAF6;
+    border: none; padding: 10px; font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    cursor: pointer; font-family: 'Jost', sans-serif;
+    font-weight: 500; transition: all 0.3s;
+  }
+  .btn-add:hover { background: var(--burgundy-dark); }
+  .btn-try {
+    flex: 1; background: transparent; color: var(--burgundy);
+    border: 1px solid var(--burgundy); padding: 10px;
+    font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-weight: 500; transition: all 0.3s;
+  }
+  .btn-try:hover { background: #FBF0F3; }
+
+  /* Kit saver */
+  .kit-save-section {
+    max-width: 700px; margin: 0 auto;
+    padding: 60px; text-align: center;
+  }
+  .kit-save-section h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 8px;
+  }
+  .kit-save-section p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 18px;
+    color: var(--text-muted); margin-bottom: 40px;
+  }
+  .kit-name-input {
+    width: 100%; padding: 16px 20px;
+    border: none; border-bottom: 1.5px solid rgba(196,149,106,0.4);
+    background: transparent; font-family: 'Cormorant Garamond', serif;
+    font-size: 20px; color: var(--text-dark);
+    outline: none; text-align: center; margin-bottom: 24px;
+    transition: border-color 0.3s;
+  }
+  .kit-name-input:focus { border-bottom-color: var(--burgundy); }
+  .kit-chips {
+    display: flex; flex-wrap: wrap; gap: 8px;
+    justify-content: center; margin-bottom: 32px;
+  }
+  .kit-chip {
+    background: var(--champagne); border: 1px solid var(--copper);
+    padding: 8px 18px; font-size: 11px;
+    color: var(--text-mid); cursor: pointer;
+    letter-spacing: 0.08em; transition: all 0.2s;
+  }
+  .kit-chip:hover {
+    background: #FBF0F3; border-color: var(--burgundy);
+    color: var(--burgundy);
+  }
+
+  /* ── MY BEAUTY HUB ── */
+  .hub-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px; max-width: 900px;
+    margin: 60px auto; padding: 0 60px;
+  }
+  .hub-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.18);
+    border-left: 3px solid var(--copper);
+    padding: 32px; transition: all 0.3s;
+  }
+  .hub-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(139,58,82,0.08); }
+  .hub-card-label {
+    font-size: 9px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--copper);
+    font-weight: 500; margin-bottom: 12px;
+  }
+  .hub-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px; color: var(--text-dark); margin-bottom: 8px;
+  }
+  .hub-card p {
+    font-size: 13px; color: var(--text-muted); line-height: 1.6;
+  }
+  .countdown {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; font-weight: 300;
+    color: var(--burgundy); margin: 12px 0 4px;
+  }
+
+  /* ── CHAT ── */
+  .chat-btn {
+    position: fixed; bottom: 32px; right: 32px;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--burgundy); color: #FFFAF6;
+    border: none; font-size: 22px; cursor: pointer;
+    box-shadow: 0 4px 20px rgba(139,58,82,0.35);
+    z-index: 200; transition: all 0.3s; display: flex;
+    align-items: center; justify-content: center;
+  }
+  .chat-btn:hover {
+    background: var(--burgundy-dark);
+    box-shadow: 0 6px 28px rgba(139,58,82,0.45);
+    transform: translateY(-2px);
+  }
+  .chat-panel {
+    position: fixed; bottom: 100px; right: 32px;
+    width: 360px; background: var(--card-bg);
+    border: 1px solid rgba(196,149,106,0.25);
+    box-shadow: 0 16px 48px rgba(28,15,10,0.14);
+    z-index: 200; display: none; border-radius: 0;
+    overflow: hidden;
+  }
+  .chat-panel.open { display: block; }
+  .chat-header {
+    background: var(--burgundy); padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .chat-header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px; color: #FFFAF6; font-weight: 400;
+  }
+  .chat-header-sub {
+    font-size: 11px; color: rgba(255,250,246,0.7);
+    letter-spacing: 0.1em;
+  }
+  .chat-body { padding: 20px; height: 220px; overflow-y: auto; }
+  .chat-message {
+    background: #FBF5EF;
+    border: 1px solid rgba(196,149,106,0.2);
+    border-radius: 0 10px 10px 10px;
+    padding: 12px 16px; font-size: 14px;
+    color: var(--text-mid); line-height: 1.6;
+    margin-bottom: 12px;
+  }
+  .chat-input-wrap {
+    display: flex; border-top: 1px solid rgba(196,149,106,0.2);
+  }
+  .chat-input {
+    flex: 1; padding: 14px 16px;
+    border: none; outline: none; font-size: 13px;
+    font-family: 'Jost', sans-serif; color: var(--text-dark);
+    background: #FFFAF6;
+  }
+  .chat-send {
+    background: var(--burgundy); color: #FFFAF6;
+    border: none; padding: 0 20px; cursor: pointer;
+    font-size: 16px; transition: background 0.2s;
+  }
+  .chat-send:hover { background: var(--burgundy-dark); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: #1C0F0A; padding: 60px;
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+  }
+  .footer-logo {
+    font-family: 'Jost', sans-serif; font-size: 13px;
+    letter-spacing: 0.25em; color: #F2E8DC;
+    text-transform: uppercase; font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .footer-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic; font-size: 20px;
+    color: var(--copper); margin-bottom: 8px;
+  }
+  .footer-copy {
+    font-size: 11px; color: rgba(242,232,220,0.4);
+    letter-spacing: 0.1em;
+  }
+  .footer-links { display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 11px; letter-spacing: 0.15em;
+    color: rgba(242,232,220,0.6); text-decoration: none;
+    text-transform: uppercase; font-weight: 400;
+    transition: color 0.2s; cursor: pointer;
+  }
+  .footer-links a:hover { color: var(--copper); }
+  .footer-col-label {
+    font-size: 9px; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--copper);
+    font-weight: 500; margin-bottom: 16px;
+  }
+
+  /* Animations */
+  .fade-in {
+    opacity: 0; transform: translateY(20px);
+    animation: fadeUp 0.6s ease forwards;
+  }
+  @keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .fade-in:nth-child(2) { animation-delay: 0.1s; }
+  .fade-in:nth-child(3) { animation-delay: 0.2s; }
+
+  /* ── STEP FLOW ── */
+  .flow-step { display: none; }
+  .flow-step.active { display: block; }
+
+  /* Image fallback */
+  .img-fallback {
+    width: 100%; height: 100%;
+    background: #F2E8DC; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 10px; letter-spacing: 0.15em;
+    color: var(--text-muted); text-transform: uppercase;
+  }
+
+  @media (max-width: 768px) {
+    nav { padding: 0 20px; }
+    .hero { grid-template-columns: 1fr; padding: 40px 20px; }
+    .hero h1 { font-size: 48px; }
+    .hero-products { height: 300px; display: none; }
+    section { padding: 60px 20px; }
+    .category-grid { grid-template-columns: 1fr; }
+    .trust-strip { grid-template-columns: repeat(2,1fr); padding: 40px 20px; }
+    .entry-grid, .hair-upload-grid, .makeup-paths { grid-template-columns: 1fr; padding: 0 20px; }
+    .product-routine-card { grid-template-columns: 1fr; }
+    .range-products { grid-template-columns: 1fr; }
+    .calendar-strip { grid-template-columns: repeat(4,1fr); padding: 0 20px; }
+    .makeup-grid { grid-template-columns: repeat(2,1fr); padding: 0 20px; }
+    .hub-grid { grid-template-columns: 1fr; padding: 0 20px; }
+    .skin-metrics { grid-template-columns: repeat(2,1fr); }
+    .quiz-options { grid-template-columns: repeat(2,1fr); }
+    footer { grid-template-columns: 1fr; padding: 40px 20px; }
+    .routine-section, .quiz-section, .kit-save-section { padding: 40px 20px; }
+    .lumi-section { padding: 0 20px; }
+    .kit-prefs-bar { padding: 16px 20px; }
+    .kit-tabs { padding: 0 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav>
+  <a class="nav-logo" onclick="showPage('home')">L'ORÉAL Paris</a>
+  <div class="nav-links">
+    <a onclick="showPage('skincare')" id="nav-skincare">Skincare</a>
+    <a onclick="showPage('haircare')" id="nav-haircare">Haircare</a>
+    <a onclick="showPage('makeup')" id="nav-makeup">Makeup</a>
+    <a onclick="showPage('hub')" id="nav-hub">My Hub</a>
+  </div>
+  <div class="nav-right">
+    <span>EN ▾</span>
+    <span>👤</span>
+    <span>🛍</span>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════ -->
+<!-- HOME PAGE -->
+<!-- ══════════════════════════════════════ -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <div>
+      <p class="hero-label">Introducing</p>
+      <h1>Beauty that<em>knows you.</em></h1>
+      <p class="hero-lumiere">Lumière</p>
+      <p class="hero-by">by L'Oréal Paris</p>
+      <p class="hero-desc">
+        <strong>Some products are chosen. Yours will be understood.</strong><br><br>
+        Lumière is L'Oréal Paris's most intelligent beauty experience — an AI-powered advisor that reads your skin, decodes your hair, and curates your makeup with the precision of a personal beauty expert and the warmth of someone who genuinely cares.<br><br>
+        This isn't browsing. This is beauty, finally personal.
+      </p>
+      <div class="hero-ctas">
+        <button class="btn-primary" onclick="showPage('skincare')">Begin Your Analysis</button>
+        <button class="btn-outline" onclick="showPage('makeup')">Explore Products</button>
+      </div>
+    </div>
+    <div class="hero-products">
+      <div class="product-float">
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&q=80" alt="Serum" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'">
+        <p class="product-float-name">Glycolic Bright Serum</p>
+      </div>
+      <div class="product-float">
+        <img src="https://images.unsplash.com/photo-1586495777744-4e6b0c0d8e93?w=300&q=80" alt="Lipstick" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'">
+        <p class="product-float-name">Rouge Signature</p>
+      </div>
+      <div class="product-float">
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=300&q=80" alt="Hair Serum" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'">
+        <p class="product-float-name">Extraordinary Oil</p>
+      </div>
+    </div>
+  </div>
+
+  <section style="background:var(--ivory);">
+    <p class="section-label">Your Journey</p>
+    <h2 class="section-heading">Three Journeys. One Destination.</h2>
+    <p class="section-sub">Where would you like to begin today?</p>
+    <div class="category-grid">
+      <div class="cat-card fade-in" onclick="showPage('skincare')">
+        <div class="cat-images">
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=150&q=80" alt="Serum" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>L\'O</div>'"></div>
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=150&q=80" alt="SPF" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>SPF</div>'"></div>
+        </div>
+        <p class="cat-label">Skincare</p>
+        <h3 class="cat-heading">Your skin, finally understood.</h3>
+        <p class="cat-body">A personalised routine built around your skin type, concerns, and climate — not a generic bestseller list.</p>
+        <button class="cat-cta">Analyse My Skin →</button>
+      </div>
+      <div class="cat-card haircare fade-in" onclick="showPage('haircare')">
+        <div class="cat-images">
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=150&q=80" alt="Shampoo" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>Hair</div>'"></div>
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=150&q=80" alt="Serum" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>Oil</div>'"></div>
+        </div>
+        <p class="cat-label" style="color:var(--sage)">Haircare</p>
+        <h3 class="cat-heading">The range your hair has been waiting for.</h3>
+        <p class="cat-body">Upload your hair photo or take a quiz — and discover the exact L'Oréal range matched to your hair type and goals.</p>
+        <button class="cat-cta" style="color:var(--sage);border-color:var(--sage)">Match My Hair →</button>
+      </div>
+      <div class="cat-card fade-in" style="border-left-color:#C4608A" onclick="showPage('makeup')">
+        <div class="cat-images">
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1586495777744-4e6b0c0d8e93?w=150&q=80" alt="Lipstick" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>Lip</div>'"></div>
+          <div class="cat-img-box"><img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=150&q=80" alt="Foundation" onerror="this.outerHTML='<div class=\'img-fallback\' style=\'width:72px;height:72px\'>Base</div>'"></div>
+        </div>
+        <p class="cat-label" style="color:#C4608A">Makeup</p>
+        <h3 class="cat-heading">Build a kit that is entirely you.</h3>
+        <p class="cat-body">Set your preferences once. Lumière builds your complete L'Oréal makeup kit — from base to lips — filtered, compatible, and saved forever.</p>
+        <button class="cat-cta" style="color:#C4608A;border-color:#C4608A">Build My Kit →</button>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div><p class="trust-num">750+</p><p class="trust-label">L'Oréal Products</p></div>
+    <div><p class="trust-num">5</p><p class="trust-label">Global Skin Climates</p></div>
+    <div><p class="trust-num">3</p><p class="trust-label">Beauty Categories</p></div>
+    <div><p class="trust-num">1</p><p class="trust-label">Personalised Experience</p></div>
+  </div>
+
+  <div class="quote-section">
+    <p class="quote-text">"The right product was always out there. Lumière simply makes sure you find it."</p>
+    <p class="quote-attr">— Dr. Lumi, Your Lumière Beauty Advisor</p>
+  </div>
+
+</div><!-- end home -->
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- SKINCARE PAGE -->
+<!-- ══════════════════════════════════════ -->
+<div id="page-skincare" class="page">
+
+  <div class="page-hero">
+    <p class="section-label">Skin Analysis</p>
+    <h2>Let's Understand Your Skin</h2>
+    <p>Your skin is unique. Your routine should be too.</p>
+  </div>
+
+  <!-- Step 1: Entry -->
+  <div id="skin-step1" class="flow-step active">
+    <div class="entry-grid">
+      <div class="entry-card" onclick="showSkinStep(2)">
+        <span class="entry-icon">📸</span>
+        <h3>Upload a Selfie</h3>
+        <p>Take or upload a clear photo of your face in natural light for the most accurate skin reading.</p>
+        <button class="btn-primary">Upload Photo</button>
+      </div>
+      <div class="entry-card" onclick="showSkinStep(2)">
+        <span class="entry-icon">📷</span>
+        <h3>Live Scan</h3>
+        <p>Allow camera access for a real-time skin analysis — your most instant path to personalised results.</p>
+        <button class="btn-primary">Open Camera</button>
+      </div>
+    </div>
+    <p class="entry-link" onclick="showSkinStep(2)"><span>Prefer to answer questions? Take the skin quiz →</span></p>
+  </div>
+
+  <!-- Step 2: Quiz -->
+  <div id="skin-step2" class="flow-step">
+    <div class="lumi-section" style="margin-top:48px">
+      <div class="lumi-avatar">🧑‍⚕️</div>
+      <div class="lumi-content">
+        <p class="lumi-name">Dr. Lumi · Lumière Beauty Advisor</p>
+        <div class="lumi-bubble">I've read your skin! Just 3 more quick questions and I'll build your perfect L'Oréal routine. ✦</div>
+      </div>
+    </div>
+    <div class="quiz-section">
+      <div class="quiz-progress"><div class="quiz-progress-fill" style="width:33%"></div></div>
+      <p class="quiz-q">What bothers your skin the most?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">🌑</span>Dark Spots</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">🔴</span>Acne</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">💧</span>Dryness</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">✨</span>Dullness</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">〰️</span>Fine Lines</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">🌸</span>Sensitivity</div>
+      </div>
+      <p class="quiz-q" style="margin-top:32px">What is your daily environment like?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)">🏠 Mostly Indoors</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">🔀 Mixed</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">☀️ Mostly Outdoors</div>
+      </div>
+      <p class="quiz-q" style="margin-top:32px">Have you used L'Oréal skincare before?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)">Yes, regularly</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">Sometimes</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">First time — I'm new here</div>
+      </div>
+      <button class="btn-primary" style="margin-top:40px" onclick="showSkinStep(3)">See My Personalised Routine →</button>
+    </div>
+  </div>
+
+  <!-- Step 3: Results -->
+  <div id="skin-step3" class="flow-step">
+    <div style="max-width:900px;margin:60px auto 0;padding:0 60px">
+      <div class="lumi-section" style="padding:0;margin-bottom:40px">
+        <div class="lumi-avatar">🧑‍⚕️</div>
+        <div class="lumi-content">
+          <p class="lumi-name">Dr. Lumi · Lumière Beauty Advisor</p>
+          <div class="lumi-bubble">Your skin profile is ready! Based on your analysis, I've built your personalised L'Oréal morning and night routine. Every product was chosen specifically for your skin. ✦</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="skin-profile-card" style="margin:0 60px 40px;max-width:none">
+      <h3>Your Skin Profile ✦</h3>
+      <div class="skin-metrics">
+        <div class="skin-metric"><p class="metric-label">Skin Type</p><p class="metric-value">Oily-Combination</p></div>
+        <div class="skin-metric"><p class="metric-label">Primary Concern</p><p class="metric-value">Hyperpigmentation</p></div>
+        <div class="skin-metric"><p class="metric-label">Hydration Level</p><p class="metric-value">Moderate</p></div>
+        <div class="skin-metric"><p class="metric-label">Climate Zone</p><p class="metric-value">Humid ✦</p></div>
+      </div>
+    </div>
+
+    <div class="routine-section" style="padding-top:0">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:400;margin-bottom:8px">Your L'Oréal Skincare Routine ✦</h2>
+      <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--burgundy);margin-bottom:32px">Built for your skin. Backed by L'Oréal science.</p>
+      <div class="routine-tabs">
+        <button class="routine-tab active" onclick="switchTab(this,'morning')">Morning Routine</button>
+        <button class="routine-tab" onclick="switchTab(this,'night')">Night Routine</button>
+      </div>
+
+      <div id="morning">
+        <div class="product-routine-card">
+          <div class="prod-img-wrap"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&q=80" alt="Face Wash" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'"></div>
+          <div class="prod-info">
+            <div class="prod-badges"><span class="badge">Step 1 — Cleanse</span><span class="badge am">AM</span></div>
+            <p class="prod-name">Glycolic Bright Face Wash</p>
+            <p class="prod-range">Glycolic Bright</p>
+            <p class="prod-why">"Glycolic Acid gently exfoliates dead skin while Niacinamide fades dark spots — revealing brighter skin from the very first wash."</p>
+            <p class="prod-how"><strong>How much:</strong> Coin-sized amount</p>
+            <button class="btn-outline btn-sm">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-routine-card">
+          <div class="prod-img-wrap"><img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&q=80" alt="Serum" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'"></div>
+          <div class="prod-info">
+            <div class="prod-badges"><span class="badge">Step 2 — Serum</span><span class="badge am">AM</span></div>
+            <p class="prod-name">Glycolic Bright Glowing Serum</p>
+            <p class="prod-range">Glycolic Bright</p>
+            <p class="prod-why">"Melasyl — L'Oréal's patented molecule — targets dark spots at the source for visibly brighter skin in 8 weeks."</p>
+            <p class="prod-how"><strong>How much:</strong> 3–4 drops</p>
+            <button class="btn-outline btn-sm">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-routine-card">
+          <div class="prod-img-wrap"><img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=300&q=80" alt="Sunscreen" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'"></div>
+          <div class="prod-info">
+            <div class="prod-badges"><span class="badge">Step 3 — Protect</span><span class="badge am">AM</span><span class="badge urgent">Non-negotiable for your climate</span></div>
+            <p class="prod-name">UV Defender SPF 50+ Sunscreen</p>
+            <p class="prod-range">UV Defender</p>
+            <p class="prod-why">"L'Oréal's Mexoryl SX blocks 97% of UVA and UVB rays — non-negotiable for any climate, any skin type."</p>
+            <p class="prod-how"><strong>How much:</strong> 2 finger-lengths</p>
+            <button class="btn-outline btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="night" style="display:none">
+        <div class="product-routine-card">
+          <div class="prod-img-wrap"><img src="https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=300&q=80" alt="Face Wash" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'"></div>
+          <div class="prod-info">
+            <div class="prod-badges"><span class="badge">Step 1 — Cleanse</span><span class="badge pm">PM</span></div>
+            <p class="prod-name">Glycolic Bright Face Wash</p>
+            <p class="prod-range">Glycolic Bright</p>
+            <p class="prod-why">"Removes the day's impurities while Glycolic Acid works overnight to resurface and brighten your complexion."</p>
+            <p class="prod-how"><strong>How much:</strong> Coin-sized amount</p>
+            <button class="btn-outline btn-sm">Add to Cart</button>
+          </div>
+        </div>
+        <div class="product-routine-card">
+          <div class="prod-img-wrap"><img src="https://images.unsplash.com/photo-1570194065650-d99fb4bedf0a?w=300&q=80" alt="HA Serum" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\'>L\'Oréal Paris</div>'"></div>
+          <div class="prod-info">
+            <div class="prod-badges"><span class="badge">Step 2 — Serum</span><span class="badge pm">PM</span></div>
+            <p class="prod-name">Revitalift 1.5% Hyaluronic Acid Serum</p>
+            <p class="prod-range">Revitalift</p>
+            <p class="prod-why">"Hyaluronic Acid holds 1000x its weight in water — replenishes moisture lost during the day so you wake to plumper, smoother skin."</p>
+            <p class="prod-how"><strong>How much:</strong> 3–4 drops</p>
+            <button class="btn-outline btn-sm">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <h4>Use this routine for 15 days. ✦</h4>
+        <p>Come back and retake your skin analysis to see your results in real time. Your skin deserves the chance to respond — and it will.</p>
+        <button class="btn-primary">Set My 15-Day Reminder</button>
+      </div>
+
+      <div style="display:flex;gap:16px;margin-top:32px;flex-wrap:wrap">
+        <button class="btn-primary">Add Full Morning Routine to Cart</button>
+        <button class="btn-outline">Save My Routine</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end skincare -->
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- HAIRCARE PAGE -->
+<!-- ══════════════════════════════════════ -->
+<div id="page-haircare" class="page">
+
+  <div class="page-hero" style="background:linear-gradient(135deg,#F5F8F2,#E8EFE4)">
+    <p class="section-label" style="color:var(--sage)">Hair Analysis</p>
+    <h2>Discover Your Perfect Hair Match</h2>
+    <p style="color:var(--sage)">Let's find the L'Oréal range built for exactly your hair.</p>
+  </div>
+
+  <div id="hair-step1" class="flow-step active">
+    <div class="lumi-section" style="margin-top:48px">
+      <div class="lumi-avatar">🧑‍⚕️</div>
+      <div class="lumi-content">
+        <p class="lumi-name">Dr. Lumi · Lumière Beauty Advisor</p>
+        <div class="lumi-bubble">Let's find your ideal L'Oréal haircare range. Upload your photos or take a quick quiz — either tells me everything I need to match you perfectly. ✦</div>
+      </div>
+    </div>
+
+    <div class="hair-upload-grid">
+      <div class="upload-box" onclick="showHairStep(2)">
+        <div class="upload-icon">💇</div>
+        <h4>Upload Full Length Hair Photo</h4>
+        <p>Wet or dry — both work perfectly and tell me something different about your hair.</p>
+      </div>
+      <div class="upload-box" onclick="showHairStep(2)">
+        <div class="upload-icon">🔬</div>
+        <h4>Upload Scalp Close-Up</h4>
+        <p>Part your hair and capture your scalp clearly — this tells me your most important hair story.</p>
+      </div>
+    </div>
+    <p class="entry-link" onclick="showHairStep(2)"><span>Prefer a quiz? Answer 6 quick questions →</span></p>
+  </div>
+
+  <div id="hair-step2" class="flow-step">
+    <div class="quiz-section">
+      <div class="quiz-progress"><div class="quiz-progress-fill" style="width:16%"></div></div>
+      <p class="quiz-q">What does your hair look like naturally?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">〰️</span>Straight</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">〜</span>Wavy</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">🌀</span>Curly</div>
+        <div class="quiz-opt" onclick="selectOpt(this)"><span class="quiz-opt-icon">🌸</span>Coily</div>
+      </div>
+      <p class="quiz-q" style="margin-top:32px">How does your scalp usually feel?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)">❄️ Dry & Flaky</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">💦 Oily</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">✅ Balanced</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">🌺 Sensitive</div>
+      </div>
+      <p class="quiz-q" style="margin-top:32px">What is your biggest hair concern?</p>
+      <div class="quiz-options">
+        <div class="quiz-opt" onclick="selectOpt(this)">🌪️ Frizz</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">💔 Damage & Breakage</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">🪶 Thinning</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">🏜️ Dryness</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">❄️ Dandruff</div>
+        <div class="quiz-opt" onclick="selectOpt(this)">🎈 Lack of Volume</div>
+      </div>
+      <button class="btn-primary" style="margin-top:40px;background:var(--sage);border-color:var(--sage)" onclick="showHairStep(3)">Find My Perfect Range →</button>
+    </div>
+  </div>
+
+  <div id="hair-step3" class="flow-step">
+    <div style="padding:60px 60px 0">
+      <div class="lumi-section" style="padding:0;margin-bottom:40px">
+        <div class="lumi-avatar">🧑‍⚕️</div>
+        <div class="lumi-content">
+          <p class="lumi-name">Dr. Lumi · Lumière Beauty Advisor</p>
+          <div class="lumi-bubble">Your hair is matched! Based on your frizzy, color-treated hair profile, the Extraordinary Oil range is your perfect L'Oréal match. Here is your complete routine. ✦</div>
+        </div>
+      </div>
+
+      <div class="range-card">
+        <p class="section-label" style="text-align:left;margin-bottom:8px">Your Primary Match</p>
+        <h3 class="range-name">Extraordinary Oil</h3>
+        <p class="range-desc">Formulated with 6 precious flower oils — deeply nourishing for dry, frizzy, color-treated hair. Leaves hair silk-smooth and frizz-free for up to 72 hours.</p>
+        <div class="range-products">
+          <div class="range-prod">
+            <img src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=200&q=80" alt="Shampoo" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:110px\'>Shampoo</div>'">
+            <p class="range-prod-name">Extraordinary Oil Shampoo</p>
+            <p class="range-prod-use">2–3x per week · 2 pumps</p>
+          </div>
+          <div class="range-prod">
+            <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?w=200&q=80" alt="Conditioner" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:110px\'>Conditioner</div>'">
+            <p class="range-prod-name">Extraordinary Oil Conditioner</p>
+            <p class="range-prod-use">After shampoo · leave 2 min</p>
+          </div>
+          <div class="range-prod">
+            <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=200&q=80" alt="Serum" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:110px\'>Serum</div>'">
+            <p class="range-prod-name">Extraordinary Oil Serum</p>
+            <p class="range-prod-use">2 pumps on damp hair</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:900px;margin:0 auto">
+        <p class="section-label" style="text-align:left">Also works well for you</p>
+        <div class="range-card" style="border-top-color:var(--copper)">
+          <h3 class="range-name" style="font-size:26px">Total Repair 5</h3>
+          <p class="range-desc">If breakage is also a concern, Total Repair 5 rebuilds hair fibre from within using Pro-Keratin and Ceramide.</p>
+          <div class="range-products" style="grid-template-columns:1fr 1fr">
+            <div class="range-prod">
+              <img src="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=200&q=80" alt="Total Repair" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:110px\'>Total Repair</div>'">
+              <p class="range-prod-name">Total Repair 5 Shampoo</p>
+            </div>
+            <div class="range-prod">
+              <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=200&q=80" alt="Dream Lengths" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:110px\'>Dream Lengths</div>'">
+              <p class="range-prod-name">Dream Lengths Shampoo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="max-width:900px;margin:0 auto 20px">
+        <p class="section-label" style="text-align:left">Your Weekly Hair Routine</p>
+      </div>
+      <div class="calendar-strip">
+        <div class="cal-day wash">
+          <p class="cal-day-label">Mon</p>
+          <div class="cal-day-icon">💧</div>
+          <p class="cal-day-text">Wash Day<br>Shampoo + Conditioner</p>
+        </div>
+        <div class="cal-day">
+          <p class="cal-day-label">Tue</p>
+          <div class="cal-day-icon">✨</div>
+          <p class="cal-day-text">Rest Day</p>
+        </div>
+        <div class="cal-day wash">
+          <p class="cal-day-label">Wed</p>
+          <div class="cal-day-icon">💧</div>
+          <p class="cal-day-text">Wash + Serum<br>2 pumps</p>
+        </div>
+        <div class="cal-day">
+          <p class="cal-day-label">Thu</p>
+          <div class="cal-day-icon">✨</div>
+          <p class="cal-day-text">Rest Day</p>
+        </div>
+        <div class="cal-day wash">
+          <p class="cal-day-label">Fri</p>
+          <div class="cal-day-icon">💧</div>
+          <p class="cal-day-text">Wash Day<br>Shampoo + Conditioner</p>
+        </div>
+        <div class="cal-day treatment">
+          <p class="cal-day-label">Sat</p>
+          <div class="cal-day-icon">🌿</div>
+          <p class="cal-day-text">Treatment Day<br>Deep mask</p>
+        </div>
+        <div class="cal-day">
+          <p class="cal-day-label">Sun</p>
+          <div class="cal-day-icon">✨</div>
+          <p class="cal-day-text">Rest Day</p>
+        </div>
+      </div>
+
+      <div class="timeline-card" style="margin:40px auto;max-width:none;border-left-color:var(--sage)">
+        <h4>Come back in 14 days to check your hair progress ✦</h4>
+        <p>Upload a "before and after" to see how your Extraordinary Oil routine has transformed your hair condition.</p>
+        <button class="btn-primary" style="background:var(--sage)">Set My 14-Day Check-In</button>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end haircare -->
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- MAKEUP PAGE -->
+<!-- ══════════════════════════════════════ -->
+<div id="page-makeup" class="page">
+
+  <div class="page-hero" style="background:linear-gradient(135deg,#FBF0F3,#F2E0E6)">
+    <p class="section-label" style="color:#C4608A">Makeup Studio</p>
+    <h2>Build Your Perfect L'Oréal Look</h2>
+    <p style="color:#C4608A">Your preferences. Your products. Your kit.</p>
+  </div>
+
+  <div id="makeup-step1" class="flow-step active">
+    <div class="makeup-paths">
+      <div class="path-card beginner" onclick="showMakeupStep(2)">
+        <span class="path-icon">🌸</span>
+        <h3>I'm New to Makeup</h3>
+        <p>Let me walk you through the basics before we build your first kit together.</p>
+        <button class="btn-primary" style="background:#C4608A">Show Me the Basics</button>
+      </div>
+      <div class="path-card builder" onclick="showMakeupStep(3)">
+        <span class="path-icon">👜</span>
+        <h3>Build My Kit</h3>
+        <p>I know what I like — let's find my perfect products and build my saved kit.</p>
+        <button class="btn-primary">Start Building</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="makeup-step2" class="flow-step">
+    <div style="max-width:900px;margin:60px auto;padding:0 60px">
+      <p class="section-label" style="text-align:left">Beginner's Guide</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:40px;font-weight:400;margin-bottom:40px">Your first makeup lesson ✦</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:40px">
+        <div style="background:#FFFAF6;border:1px solid rgba(196,149,106,0.2);padding:28px;display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start">
+          <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=200&q=80" style="width:80px;height:100px;object-fit:contain" alt="Primer" onerror="this.style.background='#F2E8DC'">
+          <div>
+            <p style="font-size:10px;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;font-weight:500;margin-bottom:6px">Step 1</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Primer</h4>
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Think of primer as the base coat for your makeup. It smooths skin so foundation applies perfectly and lasts all day.</p>
+          </div>
+        </div>
+        <div style="background:#FFFAF6;border:1px solid rgba(196,149,106,0.2);padding:28px;display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=200&q=80" style="width:80px;height:100px;object-fit:contain" alt="Foundation" onerror="this.style.background='#F2E8DC'">
+          <div>
+            <p style="font-size:10px;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;font-weight:500;margin-bottom:6px">Step 2</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Foundation</h4>
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Foundation evens your skin tone. Pick coverage based on how much you want to cover — light, medium or full.</p>
+          </div>
+        </div>
+        <div style="background:#FFFAF6;border:1px solid rgba(196,149,106,0.2);padding:28px;display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start">
+          <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=200&q=80" style="width:80px;height:100px;object-fit:contain" alt="Concealer" onerror="this.style.background='#F2E8DC'">
+          <div>
+            <p style="font-size:10px;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;font-weight:500;margin-bottom:6px">Step 3</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Concealer</h4>
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">For dark circles or spots — concealer gives targeted, precise coverage exactly where you need it most.</p>
+          </div>
+        </div>
+        <div style="background:#FFFAF6;border:1px solid rgba(196,149,106,0.2);padding:28px;display:grid;grid-template-columns:80px 1fr;gap:20px;align-items:start">
+          <img src="https://images.unsplash.com/photo-1586495777744-4e6b0c0d8e93?w=200&q=80" style="width:80px;height:100px;object-fit:contain" alt="Lipstick" onerror="this.style.background='#F2E8DC'">
+          <div>
+            <p style="font-size:10px;letter-spacing:0.2em;color:var(--copper);text-transform:uppercase;font-weight:500;margin-bottom:6px">Step 4</p>
+            <h4 style="font-family:'Cormorant Garamond',serif;font-size:20px;margin-bottom:8px">Lip Colour</h4>
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">The finishing touch. Matte for drama, satin for everyday softness, gloss for a fresh dewy look that lasts.</p>
+          </div>
+        </div>
+      </div>
+      <button class="btn-primary" onclick="showMakeupStep(3)">Ready to build your kit? →</button>
+    </div>
+  </div>
+
+  <div id="makeup-step3" class="flow-step">
+    <div class="kit-prefs-bar">
+      <span class="kit-prefs-label">Your preferences:</span>
+      <span class="pref-tag">Full Coverage</span>
+      <span class="pref-tag">Matte</span>
+      <span class="pref-tag">Warm Undertone</span>
+      <span class="pref-tag">Office / Daily</span>
+    </div>
+    <div class="kit-tabs">
+      <button class="kit-tab active" onclick="switchKitTab(this,'base')">Base</button>
+      <button class="kit-tab" onclick="switchKitTab(this,'eyes')">Eyes</button>
+      <button class="kit-tab" onclick="switchKitTab(this,'lips')">Lips</button>
+      <button class="kit-tab" onclick="switchKitTab(this,'face')">Face</button>
+    </div>
+
+    <div id="kit-base">
+      <div class="makeup-grid">
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1617897903246-719242758050?w=300&q=80" alt="Primer" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Base Magique Primer</p>
+            <p class="makeup-detail">Blurs pores and extends foundation wear all day.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1631214524020-3c69b7b3b4c4?w=300&q=80" alt="Foundation" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Infallible 24H Matte Foundation</p>
+            <p class="makeup-detail">Full Coverage · Matte · 24-hour transfer-proof wear.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=300&q=80" alt="Concealer" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Infallible Concealer</p>
+            <p class="makeup-detail">Full Coverage · Matte · Dark circles and blemishes.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="kit-eyes" style="display:none">
+      <div class="makeup-grid">
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1583241800698-e8ab01830a22?w=300&q=80" alt="Mascara" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Volume Million Lashes Mascara</p>
+            <p class="makeup-detail">Voluminous fanned-out lash effect. Buildable formula.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1591360236480-4ed861025fa1?w=300&q=80" alt="Kajal" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Kajal Magique Kohl</p>
+            <p class="makeup-detail">12-hour smudge-proof formula. Intense kohl finish.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="kit-lips" style="display:none">
+      <div class="makeup-grid">
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1586495777744-4e6b0c0d8e93?w=300&q=80" alt="Rouge Signature" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Rouge Signature Matte Lipstick</p>
+            <p class="makeup-detail">Matte · Feather-proof · Available in 4 shades</p>
+            <div style="display:flex;gap:6px;margin-bottom:12px">
+              <div style="width:20px;height:20px;background:#8B6349;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #ccc;cursor:pointer" title="Empowered"></div>
+              <div style="width:20px;height:20px;background:#C4608A;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #ccc;cursor:pointer" title="Accepted"></div>
+              <div style="width:20px;height:20px;background:#6B2A5E;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #ccc;cursor:pointer" title="Inspired"></div>
+              <div style="width:20px;height:20px;background:#8B0000;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px #ccc;cursor:pointer" title="Dazzle"></div>
+            </div>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+        <div class="makeup-card" style="opacity:0.7">
+          <div class="makeup-img">
+            <img src="https://images.unsplash.com/photo-1512207736890-6ffed8a84e8d?w=300&q=80" alt="Color Riche" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">Color Riche Lipstick</p>
+            <p class="makeup-detail" style="color:var(--text-muted);font-style:italic">Satin — outside your Matte preference</p>
+            <button class="btn-outline btn-sm" style="width:100%">Show Anyway?</button>
+          </div>
+        </div>
+
+        <!-- Shade mixer card -->
+        <div style="background:linear-gradient(135deg,#FDF0F5,#F0E8FF);border:1px solid rgba(196,149,106,0.2);padding:28px;grid-column:span 1">
+          <p style="font-size:10px;letter-spacing:0.25em;color:var(--copper);text-transform:uppercase;font-weight:500;margin-bottom:10px">✦ Special Feature</p>
+          <h4 style="font-family:'Cormorant Garamond',serif;font-size:22px;color:var(--text-dark);margin-bottom:8px">Create Your Own Shade</h4>
+          <p style="font-size:13px;color:var(--text-mid);line-height:1.6;margin-bottom:16px">Select any two L'Oréal lip shades and see what they create together.</p>
+          <select style="width:100%;padding:10px;border:1px solid rgba(196,149,106,0.3);background:#FFFAF6;font-family:'Jost',sans-serif;font-size:13px;color:var(--text-mid);margin-bottom:8px;outline:none">
+            <option>Empowered — Nude Brown</option>
+            <option>Accepted — Rosy Pink</option>
+            <option>Inspired — Berry</option>
+            <option>Dazzle — Deep Red</option>
+          </select>
+          <select style="width:100%;padding:10px;border:1px solid rgba(196,149,106,0.3);background:#FFFAF6;font-family:'Jost',sans-serif;font-size:13px;color:var(--text-mid);margin-bottom:16px;outline:none">
+            <option>Inspired — Berry</option>
+            <option>Empowered — Nude Brown</option>
+            <option>Accepted — Rosy Pink</option>
+            <option>Dazzle — Deep Red</option>
+          </select>
+          <div style="background:#FFFAF6;border:1px solid rgba(196,149,106,0.2);padding:12px;margin-bottom:16px;text-align:center">
+            <div style="width:36px;height:36px;background:#8B4A7E;border-radius:50%;margin:0 auto 8px"></div>
+            <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:14px;color:var(--burgundy)">"Empowered + Inspired = a custom mauve-berry — entirely yours"</p>
+          </div>
+          <button class="btn-primary" style="width:100%;font-size:10px">Add Both Shades to Kit</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="kit-face" style="display:none">
+      <div class="makeup-grid">
+        <div class="makeup-card">
+          <div class="makeup-img">
+            <span class="match-badge">Your Match ✦</span>
+            <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=300&q=80" alt="Blush" onerror="this.parentElement.innerHTML='<div class=\'img-fallback\' style=\'height:180px\'>L\'Oréal Paris</div>'">
+          </div>
+          <div class="makeup-card-body">
+            <p class="makeup-name">True Match Blush</p>
+            <p class="makeup-detail">Warm rose tone · Natural flush · Buildable colour.</p>
+            <div class="makeup-actions">
+              <button class="btn-add" onclick="addToKit(this)">+ Add to Kit</button>
+              <button class="btn-try">Try On Avatar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="max-width:900px;margin:0 auto;padding:0 60px 60px">
+      <div style="background:var(--champagne);border-left:3px solid var(--copper);padding:24px 32px;margin-top:20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:gap:16px">
+        <div>
+          <p style="font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--copper);font-weight:500;margin-bottom:4px">Your Kit</p>
+          <p style="font-family:'Cormorant Garamond',serif;font-size:20px;color:var(--text-dark)" id="kit-count">0 products added</p>
+        </div>
+        <button class="btn-primary" onclick="showMakeupStep(4)">Save My Kit →</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="makeup-step4" class="flow-step">
+    <div class="kit-save-section">
+      <h3>Your Kit is Ready ✦</h3>
+      <p>Saved. Named. Entirely yours.</p>
+      <input class="kit-name-input" placeholder="Name your kit..." value="">
+      <div class="kit-chips">
+        <div class="kit-chip" onclick="setKitName(this)">My Everyday Look</div>
+        <div class="kit-chip" onclick="setKitName(this)">Office Kit</div>
+        <div class="kit-chip" onclick="setKitName(this)">Wedding Essentials</div>
+        <div class="kit-chip" onclick="setKitName(this)">Evening Glam</div>
+        <div class="kit-chip" onclick="setKitName(this)">Quick 5-Minute Look</div>
+      </div>
+      <button class="btn-primary" style="width:100%;padding:16px;font-size:12px;letter-spacing:0.2em">Save My Kit</button>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:16px">Your kit will be saved to My Beauty Hub for easy reordering.</p>
+    </div>
+  </div>
+
+</div><!-- end makeup -->
+
+
+<!-- ══════════════════════════════════════ -->
+<!-- MY BEAUTY HUB -->
+<!-- ══════════════════════════════════════ -->
+<div id="page-hub" class="page">
+
+  <div class="page-hero">
+    <p class="section-label">My Profile</p>
+    <h2>My Beauty Hub</h2>
+    <p>Your skin, hair, and makeup — all in one place.</p>
+  </div>
+
+  <div class="hub-grid">
+    <div class="hub-card">
+      <p class="hub-card-label">My Skin Profile</p>
+      <h4>Oily-Combination · Hyperpigmentation</h4>
+      <p>Last analysed: Today · Climate: Humid · 15-day routine active</p>
+    </div>
+    <div class="hub-card" style="border-left-color:var(--sage)">
+      <p class="hub-card-label" style="color:var(--sage)">My Hair Profile</p>
+      <h4>Extraordinary Oil Range</h4>
+      <p>Matched range · Frizzy, color-treated · 14-day check-in scheduled</p>
+    </div>
+    <div class="hub-card">
+      <p class="hub-card-label">My Skincare Routine</p>
+      <h4>3 AM Steps · 2 PM Steps</h4>
+      <p>Glycolic Bright Face Wash → Glycolic Bright Serum → UV Defender SPF 50+</p>
+    </div>
+    <div class="hub-card">
+      <p class="hub-card-label">My Kits</p>
+      <h4>1 Saved Kit</h4>
+      <p>My Everyday Look · 3 products · Created today</p>
+    </div>
+    <div class="hub-card" style="grid-column:span 2">
+      <p class="hub-card-label">My Next Check-In</p>
+      <p class="countdown">5</p>
+      <p style="font-size:12px;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted)">Days until your 15-day skin analysis check</p>
+      <button class="btn-primary btn-sm" style="margin-top:16px">Retake Skin Analysis</button>
+    </div>
+  </div>
+
+</div><!-- end hub -->
+
+
+<!-- ── CHAT ── -->
+<button class="chat-btn" onclick="toggleChat()">✦</button>
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <div>
+      <p class="chat-header-title">Lumière ✦</p>
+      <p class="chat-header-sub">Your Personal Beauty Advisor</p>
+    </div>
+  </div>
+  <div class="chat-body">
+    <div class="chat-message">Hi! I'm Lumière — your personal beauty advisor from L'Oréal Paris. Ask me anything about skincare, haircare or makeup, or let me guide you to the right analysis. ✦</div>
+  </div>
+  <div class="chat-input-wrap">
+    <input class="chat-input" placeholder="Ask me anything..." onkeydown="if(event.key==='Enter')sendChat()">
+    <button class="chat-send" onclick="sendChat()">→</button>
+  </div>
+</div>
+
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div>
+    <p class="footer-logo">L'ORÉAL Paris</p>
+    <p class="footer-tagline">Because You're Worth It.</p>
+    <p class="footer-copy">© Lumière by L'Oréal Paris 2026</p>
+  </div>
+  <div>
+    <p class="footer-col-label">Explore</p>
+    <div class="footer-links">
+      <a onclick="showPage('skincare')">Skincare</a>
+      <a onclick="showPage('haircare')">Haircare</a>
+      <a onclick="showPage('makeup')">Makeup</a>
+      <a onclick="showPage('hub')">My Beauty Hub</a>
+    </div>
+  </div>
+  <div>
+    <p class="footer-col-label">Legal</p>
+    <div class="footer-links">
+      <a>Privacy Policy</a>
+      <a>Terms of Use</a>
+      <a>Cookie Settings</a>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ── Page Navigation ──
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+    document.getElementById('page-' + id).classList.add('active');
+    const navEl = document.getElementById('nav-' + id);
+    if (navEl) navEl.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  // ── Skincare Steps ──
+  function showSkinStep(n) {
+    document.querySelectorAll('#page-skincare .flow-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('skin-step' + n).classList.add('active');
+    window.scrollTo(0, 80);
+  }
+
+  // ── Haircare Steps ──
+  function showHairStep(n) {
+    document.querySelectorAll('#page-haircare .flow-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('hair-step' + n).classList.add('active');
+    window.scrollTo(0, 80);
+  }
+
+  // ── Makeup Steps ──
+  function showMakeupStep(n) {
+    document.querySelectorAll('#page-makeup .flow-step').forEach(s => s.classList.remove('active'));
+    document.getElementById('makeup-step' + n).classList.add('active');
+    window.scrollTo(0, 80);
+  }
+
+  // ── Quiz Options ──
+  function selectOpt(el) {
+    const parent = el.closest('.quiz-options');
+    parent.querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+    el.classList.add('selected');
+  }
+
+  // ── Routine Tabs ──
+  function switchTab(btn, id) {
+    document.querySelectorAll('.routine-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('morning').style.display = 'none';
+    document.getElementById('night').style.display = 'none';
+    document.getElementById(id).style.display = 'block';
+  }
+
+  // ── Kit Tabs ──
+  function switchKitTab(btn, id) {
+    document.querySelectorAll('.kit-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+    ['kit-base','kit-eyes','kit-lips','kit-face'].forEach(k => {
+      document.getElementById(k).style.display = 'none';
+    });
+    document.getElementById('kit-' + id).style.display = 'block';
+  }
+
+  // ── Add to Kit ──
+  let kitCount = 0;
+  function addToKit(btn) {
+    kitCount++;
+    btn.textContent = '✓ Added';
+    btn.style.background = '#4A6741';
+    document.getElementById('kit-count').textContent = kitCount + ' product' + (kitCount > 1 ? 's' : '') + ' added';
+  }
+
+  // ── Kit Name Chips ──
+  function setKitName(chip) {
+    document.querySelector('.kit-name-input').value = chip.textContent;
+  }
+
+  // ── Chat ──
+  function toggleChat() {
+    document.getElementById('chatPanel').classList.toggle('open');
+  }
+
+  const responses = [
+    "Great question! I'd suggest starting with the Glycolic Bright range for your skin type. ✦",
+    "For frizzy hair, the Extraordinary Oil range is your best match. Let me take you to the haircare analysis! ✦",
+    "Your skin sounds like it needs extra hydration — the Revitalift Hyaluronic Acid Serum would be perfect. ✦",
+    "I'd love to help you build your makeup kit! Head to the Makeup section to get started. ✦",
+    "That's a wonderful concern to address. Let me guide you to the right L'Oréal solution. ✦"
+  ];
+  let rIdx = 0;
+  function sendChat() {
+    const inp = document.querySelector('.chat-input');
+    const body = document.querySelector('.chat-body');
+    if (!inp.value.trim()) return;
+    const userMsg = document.createElement('div');
+    userMsg.style.cssText = 'background:var(--burgundy);color:#FFFAF6;padding:12px 16px;margin-bottom:12px;font-size:14px;border-radius:10px 0 10px 10px;text-align:right';
+    userMsg.textContent = inp.value;
+    body.appendChild(userMsg);
+    inp.value = '';
+    setTimeout(() => {
+      const lumiMsg = document.createElement('div');
+      lumiMsg.className = 'chat-message';
+      lumiMsg.textContent = responses[rIdx % responses.length];
+      rIdx++;
+      body.appendChild(lumiMsg);
+      body.scrollTop = body.scrollHeight;
+    }, 600);
+    body.scrollTop = body.scrollHeight;
+  }
+</script>
+</body>
+</html>
